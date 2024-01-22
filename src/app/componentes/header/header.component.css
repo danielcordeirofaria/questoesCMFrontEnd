@@ -1,0 +1,29 @@
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--dark-green);
+    color: var(--almost-white);
+}
+
+.logo{
+    display: flex;
+
+}
+
+nav{
+    width:80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a{
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    transform: scale(1.4);
+    color: var(--yellow);
+  }

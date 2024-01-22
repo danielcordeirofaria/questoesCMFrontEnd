@@ -1,0 +1,88 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+main {
+  flex: 1; /* Ocupa todo o espaço disponível */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--text-font);
+  color: var(--dark-green);
+  background-color: var(--almost-white);
+}
+
+fieldset {
+  display: flex;
+  margin: 2rem 4rem;
+  border: 3px solid var(--dark-green);
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.formQuestao,
+.selectingMateria {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  margin-top: 0.5rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 2px solid var(--dark-green); /* Defina a mesma largura de borda para ambos */
+}
+
+textarea {
+  resize: vertical;
+}
+
+.formQuestao:last-child {
+  margin-bottom: 1.5rem;
+}
+
+#materia {
+  margin-top: 0.5rem;
+}
+
+.submitBtn {
+  width: 25rem;
+  margin-top: 0;
+  font-size: 1rem; /* Ajuste o tamanho da fonte conforme necessário */
+  background-color: var(--light-green); /* Cor de fundo do botão */
+  color: var(--almost-white); /* Cor do texto do botão */
+  border: none;
+  border-radius: 5px; /* Adicione borda arredondada, se desejado */
+  cursor: pointer; /* Adicione uma dica de cursor para indicar que é clicável */
+  display: flex;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+/* Adicione uma regra de estilo quando o botão é hover ou ativo, se desejado */
+.submitBtn:hover {
+  background-color: var(--dark-green); /* Cor de fundo quando hover */
+  transform: scale(1.2);
+}
+
+.submitBtn:active {
+  background-color: #39833e; /* Cor de fundo quando ativo */
+}
+
+.labelBtn {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.submitBtn {
+  display: flex;
+}

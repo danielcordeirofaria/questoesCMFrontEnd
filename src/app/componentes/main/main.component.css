@@ -1,0 +1,31 @@
+/* main.component.css (ou main.component.scss) */
+
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh; /* Define a altura mínima para ocupar toda a viewport */
+
+  }
+  
+  main {
+    flex: 1; /* Ocupa todo o espaço disponível */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  img{
+    width: 15rem;
+    
+  }
+
+  h1{
+    font-size: x-large;
+    margin-bottom: 1.5rem;
+  }
+  
+  p{
+    margin-bottom: 1.5rem;
+
+  }
