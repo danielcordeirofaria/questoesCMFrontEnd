@@ -1,0 +1,24 @@
+<form #loginForm="ngForm" class="form" (ngSubmit)="fazerLogin()" novalidate>
+    <fieldset>
+        <legend class="legend">Entrar</legend>
+        <label class="formLogin" for="emailLogin">E-mail:
+            <input type="email" id="emailLogin" name="emailLogin" required [(ngModel)]="login"
+                #emailLoginCtrl="ngModel">
+            <div *ngIf="emailLoginCtrl.invalid && (emailLoginCtrl.dirty || emailLoginCtrl.touched)"
+                class="error-message">
+                Por favor, insira um e-mail válido.
+            </div>
+        </label>
+        <label class="formLogin" for="senhaLogin">Senha:
+            <input type="password" id="senhaLogin" name="senhaLogin" required minlength="6" [(ngModel)]="senha"
+                #senhaLoginCtrl="ngModel">
+            <div *ngIf="senhaLoginCtrl.invalid && (senhaLoginCtrl.dirty || senhaLoginCtrl.touched)"
+                class="error-message">
+                Digite uma senha com pelo menos 6 dígitos.
+            </div>
+        </label>
+    </fieldset>
+    <div class="buttonSubmit">
+        <button (click)="fazerLogin()" class="submitBtn">Enviar</button>
+    </div>
+</form>

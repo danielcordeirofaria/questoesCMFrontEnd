@@ -9,6 +9,7 @@ import { MainComponent } from './componentes/main/main.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { AdicionarQuestaoComponent } from './componentes/adicionar-questao/adicionar-questao.component';
 import { FormsModule } from '@angular/forms';
+import { EntrarComponent } from './componentes/entrar/entrar.component';
 
 @NgModule({ 
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    AdicionarQuestaoComponent
+    AdicionarQuestaoComponent,
+    EntrarComponent
   ],
   imports: [
     BrowserModule,

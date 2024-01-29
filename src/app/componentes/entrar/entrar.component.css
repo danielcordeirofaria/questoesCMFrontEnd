@@ -13,6 +13,13 @@ main {
   font-family: var(--text-font);
   color: var(--dark-green);
   background-color: var(--almost-white);
+  max-width: 10vw;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 fieldset {
@@ -23,9 +30,10 @@ fieldset {
   padding: 0.5rem 2%;
   justify-content: flex-start;
   flex-direction: column;
+  width: 20rem;
 }
 
-.legend{
+.legend {
   margin-top: 1rem;
   font-family: var(--text-font);
   font-size: 1.5rem;
@@ -33,8 +41,7 @@ fieldset {
   font-weight: 900;
 }
 
-.formQuestao,
-.selectingMateria {
+.formLogin {
   margin-top: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -44,32 +51,26 @@ fieldset {
   font-weight: 900;
 }
 
-input,
-textarea {
+/* .formLogin {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+} */
+
+.form label:last-child {
+  margin-bottom: 20px; /* ou o valor desejado para o margin-bottom */
+}
+
+input {
   margin-top: 0.5rem;
   height: 2rem;
   border-radius: 5px;
   border: 2px solid var(--dark-green); /* Defina a mesma largura de borda para ambos */
 }
 
-textarea {
-  resize: vertical;
-}
-
 .error-message{
-  color: red;
-}
-
-.formQuestao:last-child {
-  margin-bottom: 1.5rem;
-}
-
-#materia {
-  margin-top: 0.5rem;
-  border: 2px solid var(--dark-green); /* Defina a mesma largura de borda para ambos */
-  border-radius: 5px;
-
-}
+    color: red;
+  }
 
 .submitBtn {
   width: 25rem;
@@ -83,6 +84,9 @@ textarea {
   display: flex;
   justify-content: center;
   transition: 0.2s;
+  height: 2rem;
+  align-items: center;
+  width: 20vw;
 }
 
 /* Adicione uma regra de estilo quando o botão é hover ou ativo, se desejado */
@@ -103,15 +107,9 @@ textarea {
   justify-content: center;
 }
 
-.buttonSubmit{
+.buttonSubmit {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
-}
-
-.submitBtn {
-  display: flex;
-  height: 2rem;
-  align-items: center;
 }

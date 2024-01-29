@@ -1,44 +1,48 @@
 <form #questaoForm="ngForm" class="form" (ngSubmit)="enviarDados()" novalidate>
-    <fieldset>
-        <legend>Adicionar Questões</legend>
-        <label class="formQuestao" for="anodaprova">Ano da prova:
-            <input type="text" id="anodaprova" name="anodaprova" required [(ngModel)]="anoProva" #anodaprova="ngModel"
-                pattern="^\d{4}$">
-            <div *ngIf="anodaprova.invalid && (anodaprova.dirty || anodaprova.touched)" class="error-message">
-                Digite um ano válido.
-            </div>
-        </label>
-        <label class="formQuestao">Numero da questão: <input type="int" name="numerodaquestao" required
-                [(ngModel)]="numeroDaQuestao"></label>
-        <label class="formQuestao">Enunciado: <textarea type="text" name="enunciado" required
-                [(ngModel)]="enunciado"></textarea></label>
-        <label class="formQuestao">Endereço da imagem: <input type="text" name="enderecoimagem" required
-                [(ngModel)]="enderecoDaImagem"></label>
-        <label class="formQuestao">Resposta A: <input type="text" name="respostaa" required
-                [(ngModel)]="respostaA"></label>
-        <label class="formQuestao">Resposta B: <input type="text" name="respostab" required
-                [(ngModel)]="respostaB"></label>
-        <label class="formQuestao">Resposta C: <input type="text" name="respostac" required
-                [(ngModel)]="respostaC"></label>
-        <label class="formQuestao">Resposta D: <input type="text" name="respostad" required
-                [(ngModel)]="respostaD"></label>
-        <label class="formQuestao">Resposta E: <input type="text" name="respostae" required
-                [(ngModel)]="respostaE"></label>
-        <label class="formQuestao">Gabarito: <input type="text" name="gabarito" required [(ngModel)]="gabarito"></label>
-        <div class="selectingMateria">
-            <label for="materia">Escolha uma matéria:</label>
+        <fieldset>
+                <legend class="legend">Adicionar Questões</legend>
+                <label class="formQuestao" for="anodaprova">Ano da prova:
+                        <input type="text" id="anodaprova" name="anodaprova" required [(ngModel)]="anoProva"
+                                #anodaprova="ngModel" pattern="^\d{4}$">
+                        <div *ngIf="anodaprova.invalid && (anodaprova.dirty || anodaprova.touched)"
+                                class="error-message">
+                                Digite um ano válido.
+                        </div>
+                </label>
+                <label class="formQuestao">Numero da questão: <input type="int" name="numerodaquestao" required
+                                [(ngModel)]="numeroDaQuestao"></label>
+                <label class="formQuestao">Enunciado: <textarea type="text" name="enunciado" required
+                                [(ngModel)]="enunciado"></textarea></label>
+                <label class="formQuestao">Endereço da imagem: <input type="text" name="enderecoimagem" required
+                                [(ngModel)]="enderecoDaImagem"></label>
+                <label class="formQuestao">Resposta A: <input type="text" name="respostaa" required
+                                [(ngModel)]="respostaA"></label>
+                <label class="formQuestao">Resposta B: <input type="text" name="respostab" required
+                                [(ngModel)]="respostaB"></label>
+                <label class="formQuestao">Resposta C: <input type="text" name="respostac" required
+                                [(ngModel)]="respostaC"></label>
+                <label class="formQuestao">Resposta D: <input type="text" name="respostad" required
+                                [(ngModel)]="respostaD"></label>
+                <label class="formQuestao">Resposta E: <input type="text" name="respostae" required
+                                [(ngModel)]="respostaE"></label>
+                <label class="formQuestao">Gabarito: <input type="text" name="gabarito" required
+                                [(ngModel)]="gabarito"></label>
+                <div class="selectingMateria">
+                        <label for="materia">Escolha uma matéria:</label>
 
-            <select id="materia" name="materia" [(ngModel)]="materia">
-                <option value="matematica">Matemática</option>
-                <option value="historia">História</option>
-            </select>
+                        <select id="materia" name="materia" [(ngModel)]="materia">
+                                <option value="matematica">Matemática</option>
+                                <option value="historia">Português</option>
+                        </select>
+                </div>
+                <label class="formQuestao">Endereço do vídeo: <input type="text" name="enderecovideo" required
+                                [(ngModel)]="enderecoDoVideo"></label>
+
+        </fieldset>
+        <div class="buttonSubmit">
+                <button (click)="enviarDados()" class="submitBtn">Enviar Dados</button>
         </div>
-        <label class="formQuestao">Endereço do vídeo: <input type="text" name="enderecovideo" required
-                [(ngModel)]="enderecoDoVideo"></label>
-
-    </fieldset>
-    <button (click)="enviarDados()">Enviar Dados</button>
-    <!-- <label title="This is the submit button." class="labelBtn">
+        <!-- <label title="This is the submit button." class="labelBtn">
         <input type="submit" value="Sending register" class="submitBtn">
     </label> -->
 </form>
