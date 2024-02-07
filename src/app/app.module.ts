@@ -9,7 +9,8 @@ import { MainComponent } from './componentes/main/main.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { AdicionarQuestaoComponent } from './componentes/adicionar-questao/adicionar-questao.component';
 import { FormsModule } from '@angular/forms';
-import { EntrarComponent } from './componentes/entrar/entrar.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({ 
   declarations: [
@@ -18,12 +19,13 @@ import { EntrarComponent } from './componentes/entrar/entrar.component';
     MainComponent,
     FooterComponent,
     AdicionarQuestaoComponent,
-    EntrarComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

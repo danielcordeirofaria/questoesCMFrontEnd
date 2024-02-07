@@ -1,8 +1,8 @@
-<form #loginForm="ngForm" class="form" (ngSubmit)="fazerLogin()" novalidate>
+<form #loginForm="ngForm" class="form"  novalidate>
     <fieldset>
         <legend class="legend">Entrar</legend>
-        <label class="formLogin" for="emailLogin">E-mail:
-            <input type="email" id="emailLogin" name="emailLogin" required [(ngModel)]="login"
+        <label class="formLogin" for="emailLogin">Login:
+            <input type="text" id="emailLogin" name="emailLogin" required [(ngModel)]="usuario.login"
                 #emailLoginCtrl="ngModel">
             <div *ngIf="emailLoginCtrl.invalid && (emailLoginCtrl.dirty || emailLoginCtrl.touched)"
                 class="error-message">
@@ -10,7 +10,7 @@
             </div>
         </label>
         <label class="formLogin" for="senhaLogin">Senha:
-            <input type="password" id="senhaLogin" name="senhaLogin" required minlength="6" [(ngModel)]="senha"
+            <input type="password" id="senhaLogin" name="senhaLogin" required minlength="6" [(ngModel)]="usuario.senha"
                 #senhaLoginCtrl="ngModel">
             <div *ngIf="senhaLoginCtrl.invalid && (senhaLoginCtrl.dirty || senhaLoginCtrl.touched)"
                 class="error-message">
@@ -19,6 +19,6 @@
         </label>
     </fieldset>
     <div class="buttonSubmit">
-        <button (click)="fazerLogin()" class="submitBtn">Enviar</button>
+        <button (click)="logar()" class="submitBtn">Enviar</button>
     </div>
 </form>

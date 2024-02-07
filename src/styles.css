@@ -62,6 +62,7 @@ table {
 html{
 	max-width: 1200px;
 	font-family: var(--text-font);
+	margin: auto;
 }
 
 html,body{
