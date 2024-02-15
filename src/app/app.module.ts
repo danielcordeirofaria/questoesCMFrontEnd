@@ -11,6 +11,8 @@ import { AdicionarQuestaoComponent } from './componentes/adicionar-questao/adici
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './componentes/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WaitIconComponent } from './componentes/wait-icon/wait-icon.component';
+import { CadastrarUsuarioComponent } from './componentes/cadastrar-usuario/cadastrar-usuario.component';
 
 @NgModule({ 
   declarations: [
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     MainComponent,
     FooterComponent,
     AdicionarQuestaoComponent,
-    LoginComponent
+    LoginComponent,
+    WaitIconComponent,
+    CadastrarUsuarioComponent
   ],
   imports: [
     BrowserModule,

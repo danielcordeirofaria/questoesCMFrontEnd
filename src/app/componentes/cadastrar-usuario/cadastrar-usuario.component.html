@@ -1,0 +1,87 @@
+<app-wait-icon *ngIf="loading"></app-wait-icon>
+
+
+<form #cadastrarUsuarioForm="ngForm" class="form" novalidate>
+    <fieldset>
+        <legend class="legend">Cadastrar novo usuário</legend>
+        <label class="formNovoUsuario" for="anodaprova">Nome Completo
+            <input type="text" id="nomeUsuario" name="nomeUsuario" [required]="true" [(ngModel)]="usuario.nome"
+                #nomeUsuarioCtrl="ngModel">
+            <div *ngIf="nomeUsuarioCtrl.invalid && (nomeUsuarioCtrl.dirty || nomeUsuarioCtrl.touched)"
+                class="error-message">
+                Digite seu nome.
+            </div>
+        </label>
+
+        <label class="formNovoUsuario">Email: <input name="email" [required]="true" [(ngModel)]="usuario.email"
+                #emailCtrl="ngModel">
+            <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)" class="error-message">
+                Digite seu email.
+            </div>
+        </label>
+
+        <label class="formNovoUsuario">Login: <input name="login" [required]="true" [(ngModel)]="usuario.login"
+                #loginCtrl="ngModel">
+            <div *ngIf="loginCtrl.invalid && (loginCtrl.dirty || loginCtrl.touched)" class="error-message">
+                Digite sua login.
+            </div>
+        </label>
+
+        <label class="formNovoUsuario">Password: <input name="password" type="password" [required]="true" [(ngModel)]="usuario.password"
+                #passwordCtrl="ngModel">
+            <div *ngIf="passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)" class="error-message">
+                Digite sua senha.
+            </div>
+        </label>
+
+        <label class="formNovoUsuario" for="dataNascimento">
+            <!-- Adicione o atributo 'for' com o valor do 'id' do campo de formulário -->
+            Data de Nascimento:
+            <input id="dataNascimento" name="dataNascimento" [required]="true" (ngModel)="usuario.dataNascimento"
+                #dataNascimentoCtrl="ngModel">
+            <div *ngIf="dataNascimentoCtrl.invalid && (dataNascimentoCtrl.dirty || dataNascimentoCtrl.touched)"
+                class="error-message">
+                Digite sua data de nascimento.
+            </div>
+        </label>
+
+
+        <label class="formNovoUsuario">Cidade: <input name="cidade" [required]="true" [(ngModel)]="usuario.cidade"
+                #cidadeCtrl="ngModel">
+            <div *ngIf="cidadeCtrl.invalid && (cidadeCtrl.dirty || cidadeCtrl.touched)" class="error-message">
+                Digite sua cidade.
+            </div>
+        </label>
+
+        <label class="formNovoUsuario">Whatsapp: <input name="whatsapp" [required]="true" [(ngModel)]="usuario.whatsapp"
+                #whatsappCtrl="ngModel">
+            <div *ngIf="whatsappCtrl.invalid && (whatsappCtrl.dirty || whatsappCtrl.touched)" class="error-message">
+                Digite sua whatsapp.
+            </div>
+        </label>
+
+        <div class="selectingColegio">
+            <label for="colegio">Colégio para a qual fará a prova: </label>
+            <select id="colegio" name="colegio" [(ngModel)]="usuario.escolaDaProva">
+                <option value="CMC">CMC</option>
+                <option value="CMRJ">CMRJ</option>
+                <option value="CMSP">CMSP</option>
+                <option value="CMBel">CMBel</option>
+                <option value="CMBH">CMBH</option>
+                <option value="CMBH">CMBH</option>
+                <option value="CMB">CMB</option>
+                <option value="CMCG">CMCG</option>
+                <option value="CMF">CMF</option>
+                <option value="CMJF">CMJF</option>
+                <option value="CMM">CMM</option>
+                <option value="CMPA">CMPA</option>
+                <option value="CMR">CMR</option>
+                <option value="CMS">CMS</option>
+                <option value="CMSM">CMSM</option>
+            </select>
+        </div>
+
+    </fieldset>
+    <div class="buttonSubmit">
+        <button (click)="cadastrarUsuario()" class="submitBtn">Cadastrar</button>
+    </div>

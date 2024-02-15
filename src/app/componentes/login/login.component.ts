@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../servicos/login.service';
-import { Usuario } from '../../Model/Usuario';
 import { QuestoesToken } from '../../Model/QuestoesToken';
+import { Login } from '../../Model/Login';
 
 @Component({
   selector: 'app-login',
@@ -12,23 +12,30 @@ import { QuestoesToken } from '../../Model/QuestoesToken';
 export class LoginComponent {
 
 
-  public usuario: Usuario = new Usuario();
+  public login: Login = new Login();
+  
+  public loading: boolean = false;
+  public mensagem: String = "";
   public constructor(private route:Router, private service: LoginService){
 
   }
 
   logar() {
-    this.service.efetuarLogin(this.usuario).subscribe(
+    this.loading = true;
+    this.service.efetuarLogin(this.login).subscribe(
       (res: QuestoesToken)  => {
-        alert("Login deu certo");
+        this.loading = false;
+        localStorage.setItem("questoesToken", res.token); 
+        console.log(res.token)
         this.route.navigate(["main"])
       },
       (err: any) => {
-        alert("LOGIN FALHOU!!!");
+        this.mensagem = "Usuário/Senha inválidos";
+        this.loading = false;
       }
     )
 
-    console.log(this.usuario)
+    console.log(this.login)
     }
 
 }

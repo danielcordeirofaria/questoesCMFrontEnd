@@ -1,20 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { QuestoesToken } from '../Model/QuestoesToken';
+import { Usuario } from '../Model/Usuario';
 import { environment } from '../../environments/environment.development';
-import { Login } from '../Model/Login';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
-  public efetuarLogin(login: Login): Observable<QuestoesToken>{
-
-    return this.http.post<QuestoesToken>(environment.apiURL + "/auth/login", login);
-
+  public cadastrarNovoUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(environment.apiURL + "/usuarios", usuario);
   }
 }
