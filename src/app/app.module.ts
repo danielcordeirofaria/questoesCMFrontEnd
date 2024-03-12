@@ -13,6 +13,9 @@ import { LoginComponent } from './componentes/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WaitIconComponent } from './componentes/wait-icon/wait-icon.component';
 import { CadastrarUsuarioComponent } from './componentes/cadastrar-usuario/cadastrar-usuario.component';
+import { QuestoesAleatoriasComponent } from './componentes/questoes-aleatorias/questoes-aleatorias.component';
+import { AuthGuard } from './guards/auth.guard';
+import { InterceptorModule } from './interceptor/interceptor.module';
 
 @NgModule({ 
   declarations: [
@@ -23,15 +26,17 @@ import { CadastrarUsuarioComponent } from './componentes/cadastrar-usuario/cadas
     AdicionarQuestaoComponent,
     LoginComponent,
     WaitIconComponent,
-    CadastrarUsuarioComponent
+    CadastrarUsuarioComponent,
+    QuestoesAleatoriasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    InterceptorModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

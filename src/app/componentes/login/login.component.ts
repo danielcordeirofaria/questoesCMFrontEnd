@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../servicos/login.service';
 import { QuestoesToken } from '../../Model/QuestoesToken';
 import { Login } from '../../Model/Login';
+import { TokenService } from '../../servicos/token.service';
 
 @Component({
   selector: 'app-login',
@@ -16,18 +17,16 @@ export class LoginComponent {
   
   public loading: boolean = false;
   public mensagem: String = "";
-  public constructor(private route:Router, private service: LoginService){
-
-  }
+  public constructor(private router:Router, private service: LoginService, private tokenService: TokenService){}
 
   logar() {
     this.loading = true;
     this.service.efetuarLogin(this.login).subscribe(
       (res: QuestoesToken)  => {
         this.loading = false;
-        localStorage.setItem("questoesToken", res.token); 
+        this.tokenService.saveToken(res.token);
         console.log(res.token)
-        this.route.navigate(["main"])
+        this.router.navigate(["main"])
       },
       (err: any) => {
         this.mensagem = "Usuário/Senha inválidos";

@@ -4,17 +4,17 @@ import { MainComponent } from './componentes/main/main.component';
 import { AdicionarQuestaoComponent } from './componentes/adicionar-questao/adicionar-questao.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { CadastrarUsuarioComponent } from './componentes/cadastrar-usuario/cadastrar-usuario.component';
+import { QuestoesAleatoriasComponent } from './componentes/questoes-aleatorias/questoes-aleatorias.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  {path: '',      component: MainComponent},
+  {path: '', component: MainComponent},
   {path: 'adicionarQuestao', component: AdicionarQuestaoComponent},
   {path: 'login', component: LoginComponent},
   {path: 'main', component: MainComponent},
-  {path: 'cadastrarUsuario', component: CadastrarUsuarioComponent}
+  {path: 'cadastrarUsuario', component: CadastrarUsuarioComponent},
+  {path: 'questoesAleatorias', component: QuestoesAleatoriasComponent, canActivate: [AuthGuard]}
   
-  // {path: 'link2', component: Componente2Component},
-  // {path: 'link3', component: Componente3Component},
-
 ];
 
 @NgModule({
