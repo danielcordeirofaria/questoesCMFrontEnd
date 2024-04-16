@@ -6,6 +6,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { CadastrarUsuarioComponent } from './componentes/cadastrar-usuario/cadastrar-usuario.component';
 import { QuestoesAleatoriasComponent } from './componentes/questoes-aleatorias/questoes-aleatorias.component';
 import { AuthGuard } from './guards/auth.guard';
+import { QuestaoUnicaComponent } from './componentes/questao-unica/questao-unica.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -13,8 +14,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'main', component: MainComponent},
   {path: 'cadastrarUsuario', component: CadastrarUsuarioComponent},
-  {path: 'questoesAleatorias', component: QuestoesAleatoriasComponent, canActivate: [AuthGuard]}
-  
+  {path: 'questoesAleatorias', component: QuestoesAleatoriasComponent, canActivate: [AuthGuard]},
+  {path: 'buscarQuestao', component: QuestaoUnicaComponent}
+
 ];
 
 @NgModule({

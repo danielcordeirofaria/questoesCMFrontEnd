@@ -23,6 +23,7 @@ export class LoginComponent {
     this.loading = true;
     this.service.efetuarLogin(this.login).subscribe(
       (res: QuestoesToken)  => {
+        console.log("Estoudentro do res")
         this.loading = false;
         this.tokenService.saveToken(res.token);
         console.log(res.token)

@@ -16,6 +16,7 @@ import { CadastrarUsuarioComponent } from './componentes/cadastrar-usuario/cadas
 import { QuestoesAleatoriasComponent } from './componentes/questoes-aleatorias/questoes-aleatorias.component';
 import { AuthGuard } from './guards/auth.guard';
 import { InterceptorModule } from './interceptor/interceptor.module';
+import { QuestaoUnicaComponent } from './componentes/questao-unica/questao-unica.component';
 
 @NgModule({ 
   declarations: [
@@ -27,7 +28,8 @@ import { InterceptorModule } from './interceptor/interceptor.module';
     LoginComponent,
     WaitIconComponent,
     CadastrarUsuarioComponent,
-    QuestoesAleatoriasComponent
+    QuestoesAleatoriasComponent,
+    QuestaoUnicaComponent
   ],
   imports: [
     BrowserModule,

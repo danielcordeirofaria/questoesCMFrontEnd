@@ -1,6 +1,6 @@
 export class Questao{
 
-    public idQestao: number;
+    public idQuestao: number;
     public codigoQuestao: string;
     public escolaDaProva: string;
     public anoProva: string;
@@ -16,7 +16,7 @@ export class Questao{
     public enderecoVideo: string;
 
     public constructor(){
-        this.idQestao = 0;
+        this.idQuestao = 0;
         this.codigoQuestao = "";
         this.escolaDaProva = "";
         this.anoProva = "";

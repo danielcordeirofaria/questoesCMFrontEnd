@@ -1,0 +1,22 @@
+<h1>Procure uma questão</h1>
+<label for="opcoes">busque por: </label>
+<select id="opcoes" (change)="mostrarCampo()" required>
+    <option value="" disabled selected hidden>Selecione uma opção</option>
+    <option value="opcao1">Ano e número da questão</option>
+    <option value="opcao2">Palavras no enunciado</option>
+</select>
+
+<div id="campoAnoNumero" style="display: none;">
+    <label for="escolas">Escolha uma escola:</label>
+    <select id="escolas" required>
+        <option value="" disabled selected hidden>Selecione uma opção</option>
+        <option value="option1">CMC</option>
+        <option value="option2">CMSP</option>
+    </select>
+    <label for="ano">Ano:</label>
+    <input type="text" id="ano" [(ngModel)]="ano" name="ano" required pattern="[0-9]{4}" (blur)="onBlur()" [ngClass]="{'invalid-input': anoInput.invalid && anoInput.dirty}">
+    <div *ngIf="anoInput.invalid && anoInput.dirty" class="error-message">Por favor, insira um ano válido (4 dígitos numéricos).</div>
+    <label for="numero">Número:</label>
+    <input type="text" id="numero" required>
+    <button>Buscar</button>
+</div>

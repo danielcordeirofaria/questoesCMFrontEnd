@@ -1,0 +1,16 @@
+:host {
+    flex: 1;
+}
+
+select{
+    border-radius: 5px;
+}
+
+.invalid-input {
+    border: 2px solid red;
+  }
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  

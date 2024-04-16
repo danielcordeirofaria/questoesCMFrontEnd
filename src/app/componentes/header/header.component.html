@@ -4,13 +4,20 @@
         <h1>Questões CM</h1>
     </div>
     <nav class="menu">
-
-        <a routerLink="/">Home</a>
-        <a routerLink="/questoesAleatorias">Questões aleatórias</a>
-        <a routerLink="/link2">Montar Simulado</a>
-        <a routerLink="/adicionarQuestao">Adicionar Questões</a>
-        <a routerLink="/cadastrarUsuario">Cadastrar Usuario</a>
-        <a routerLink="/login">Entrar</a>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/buscarQuestao">Buscar Questão</a></li>
+            <li><button (click)="carregarQuestao()">Questões aleatórias</button></li>
+            <li><a routerLink="/link2">Montar Simulado</a></li>
+            <li><a routerLink="/adicionarQuestao">Adicionar Questões</a></li>
+            <li><a routerLink="/cadastrarUsuario">Cadastrar Usuario</a></li>
+            <li><a routerLink="/login">Entrar</a></li>
+        </ul>
+        
+        
+        
+        
+        
         
     </nav>
 </header>

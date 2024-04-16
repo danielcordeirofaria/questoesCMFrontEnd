@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     min-height: 80vh; /* Define a altura mínima para ocupar toda a viewport */
-
+    flex: 1;
   }
   
   main {
@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    grid-area: main;
   }
 
   img{

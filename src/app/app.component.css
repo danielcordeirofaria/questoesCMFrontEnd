@@ -1,0 +1,26 @@
+/* .container{
+    display: grid;
+    grid-template-rows: 54px 0 1fr 110px;
+    grid-template-areas: "header" "main" "footer";
+    min-height: 100vh;
+} */
+
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1;
+  }
+  
+  footer {
+    margin-top: auto;
+  }

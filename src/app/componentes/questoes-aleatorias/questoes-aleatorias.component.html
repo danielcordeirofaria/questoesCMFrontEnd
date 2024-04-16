@@ -1,10 +1,16 @@
-<section class="questao">
-    <div class="dadosQuestao">
-        <div class="idQuestao">
-            <p>id Questão: </p>
+<section class="questao" *ngIf="questao">
+    <div class="questaoInteira">
+        <div class="dadosQuestao">
+            <p class="idQuestao">id Questão: {{ questao.idQuestao }}</p>
+            <p class="anoQuestao">Ano da prova: {{ questao.anoProva }}</p>
+        </div>
+        <div class="numeroComEnunciado">
+
+            <h1 class="numeroQuestao">{{questao.numeroQuestao}}.</h1>
+            <div class="numeroQuestao" [innerHTML]= "questao.enunciado"></div>
 
         </div>
-        <div class="anoQuestao"></div>
     </div>
-
 </section>
+
+<!-- <div><p>O quadro abaixo foi apresentado por uma equipe da Feira de Ciências como um desafio aos visitantes. </p><img  class = "imageQuestaoCMC2022_202315" src="../../../assets/image/cmc2022_20232_15_01.png" alt="imagem da questao\" style="width: 21rem;"><div class="questao"><p>Sabendo que</p><img src="../../../assets/image/cmc2022_20232_15_02.png" alt=""><p>e</p><img src="../../../assets/image/cmc2022_20232_15_03.png" alt=""><p>são números naturais, então, o valor da expressão </p><img src="../../../assets/image/cmc2022_20232_15_04.png\" alt=""><p>é igual a</p></div> -->
