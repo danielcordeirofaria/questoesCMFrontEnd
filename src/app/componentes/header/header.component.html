@@ -9,15 +9,11 @@
             <li><a routerLink="/buscarQuestao">Buscar Questão</a></li>
             <li><button (click)="carregarQuestao()">Questões aleatórias</button></li>
             <li><a routerLink="/link2">Montar Simulado</a></li>
-            <li><a routerLink="/adicionarQuestao">Adicionar Questões</a></li>
-            <li><a routerLink="/cadastrarUsuario">Cadastrar Usuario</a></li>
-            <li><a routerLink="/login">Entrar</a></li>
+            <!-- Use *ngIf para mostrar ou ocultar o link com base no isAdmin -->
+            <li *ngIf="isAdmin"><a routerLink="/adicionarQuestao">Adicionar Questões</a></li>
+            <li *ngIf="isAdmin"><a routerLink="/cadastrarUsuario">Cadastrar Usuario</a></li>
+            <li *ngIf="isTokenValid"><a routerLink="/" (click)="deslogar()">Sair</a></li>
+            <li *ngIf="!isTokenValid"><a routerLink="/login">Entrar</a></li>
         </ul>
-        
-        
-        
-        
-        
-        
     </nav>
 </header>

@@ -27,7 +27,10 @@ export class LoginComponent {
         this.loading = false;
         this.tokenService.saveToken(res.token);
         console.log(res.token)
-        this.router.navigate(["main"])
+        this.router.navigate(["main"]).then(() => {
+          // Executar reload apenas após a navegação para a rota '/main'
+          location.reload();
+        });
       },
       (err: any) => {
         this.mensagem = "Usuário/Senha inválidos";
